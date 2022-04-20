@@ -66,7 +66,7 @@ loop visited (f:fs) = do
 main :: IO ()
 main = do
     opts <- execParser (info (parser <**> helper) $ fullDesc <>
-                                      progDesc "Analyzes reachability of Markdown files")
+                                      progDesc "Given set a Obsidian markdown files, finds all reachable notes")
     references <- concat <$> forM (paths opts) getReferences
     visited <- loop Set.empty references
     mapM_ putStrLn visited
