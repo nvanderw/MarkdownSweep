@@ -1,0 +1,1 @@
+A reachability analyzer for Obsidian markdown databases.
